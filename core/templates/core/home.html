@@ -6,9 +6,9 @@
         {% for field in form %}
             {{ field.label_tag }}
             {{ field }}
-            {{ field.errors }}
+            <small class="text-white">{{ field.errors }}</small>
         {% endfor %}
-        <input type="submit" value="Add" class="btn btn-danger">
+        <input type="submit" value="Add" class="btn btn-danger mt-2">
     </form>
 </div>
 <div class="messages container">
@@ -21,10 +21,10 @@
 <div class="container">
     <div class="row">
         {% for photo in photos %}
-        <div class="col-md-4">
-            <img src="{{ photo.content.url }}" height="200" class="img-thumbnail">
-            <a href="{% url 'delete' photo.id %}" class="position-absolute d-none">Delete</a>
-            <p>{{ photo.date }}</p>
+        <div class="col-md-4 position-relative mt-3 image-container">
+            <img src="{{ photo.content.url }}" class="img-thumbnail">
+            <a href="{% url 'delete' photo.id %}" class="position-absolute delete-button btn btn-danger">Delete</a>
+            <p class="text-center">{{ photo.date }}</p>
         </div>
 
         {% endfor %}

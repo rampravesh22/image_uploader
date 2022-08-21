@@ -25,4 +25,5 @@ def delete(request, id):
     photo = Images.objects.get(id=id)
     if photo:
         photo.delete()
+    messages.warning(request, "Image has been deleted !!")
     return redirect('/')

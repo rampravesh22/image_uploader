@@ -1,0 +1,11 @@
+.delete-button{
+    left: 30px;
+    top: 20px;
+}
+.container{
+    border: 3px solid rebeccapurple
+}
+
+.image-container:hover .delete-button{
+    background-color: red !important;
+}
