@@ -1,11 +1,42 @@
-.delete-button{
-    left: 30px;
-    top: 20px;
-}
-.container{
-    border: 3px solid rebeccapurple
+.bar {
+    position: absolute;
+    height: 40px;
+    width: 40%;
+    bottom: 20%;
+    left: 30%;
+    transition: all ease 1s;
+    opacity: 0;
 }
 
-.image-container:hover .delete-button{
-    background-color: red !important;
+.image-container:hover .bar {
+    bottom: 20%;
+    opacity: 1;
+}
+
+
+.image-container {
+    overflow: hidden;
+}
+
+.p-messages {
+    color: rgb(6, 3, 3) !important;
+    /* border:3px solid white; */
+    background-color: white;
+    padding: 5px 0 7px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: larger;
+    transition: all 1s ease;
+    opacity: 1;
+}
+
+.new-message {
+    font-size: 0px;
+    padding: 0;
+}
+
+@media screen and (max-width:768px) {
+    .messages {
+        margin-top: 20px !important;
+    }
 }
