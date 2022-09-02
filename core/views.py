@@ -4,13 +4,12 @@ from core.models import Images
 from django.contrib import messages
 # Create your views here.
 
-
 def home(request):
     if request.method == "POST":
         form = Upload(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request,"Image Uploaded Successfully")
+            messages.success(request, "Image Uploaded Successfully")
             return redirect("/")
     form = Upload()
     photos = Images.objects.all()
@@ -27,3 +26,4 @@ def delete(request, id):
         photo.delete()
     messages.warning(request, "Image has been deleted !!")
     return redirect('/')
+

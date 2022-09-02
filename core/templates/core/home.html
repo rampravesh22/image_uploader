@@ -22,7 +22,8 @@
     <div class="row">
         {% for photo in photos %}
         <div class="col-md-4 position-relative mt-3 image-container">
-            <img src="{{ photo.content.url }}" class="img-thumbnail">
+            <img src="{{ photo.content }}" class="img-thumbnail">
+            {% comment %} <div style='width:50px;height:30px'></div> {% endcomment %}
             <a href="{% url 'delete' photo.id %}" class="position-absolute delete-button btn btn-danger">Delete</a>
             <p class="text-center">{{ photo.date }}</p>
         </div>
